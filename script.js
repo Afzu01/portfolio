@@ -5,6 +5,7 @@ const projects = [
     tags: ["FastAPI", "Recommendations", "Embeddings"],
     site: "https://afzu01.github.io/AI-Backened-Internship-Project/ai-project/",
     repo: "https://github.com/Afzu01/AI-Backened-Internship-Project",
+    backend: "backend.html#ai-backened-internship-project",
     workflow: [
       "Input product context and user constraints",
       "Generate recommendation candidates and embeddings",
@@ -17,6 +18,7 @@ const projects = [
     tags: ["FastAPI", "SQLite", "Workflow"],
     site: "https://afzu01.github.io/Workflow-Orchestrator-API/",
     repo: "https://github.com/Afzu01/Workflow-Orchestrator-API",
+    backend: "backend.html#workflow-orchestrator-api",
     workflow: [
       "Create event with owner and priority",
       "Move through status lifecycle states",
@@ -29,6 +31,7 @@ const projects = [
     tags: ["NLP", "scikit-learn", "Search"],
     site: "https://afzu01.github.io/Semantic-FAQ-Retriever/",
     repo: "https://github.com/Afzu01/Semantic-FAQ-Retriever",
+    backend: "backend.html#semantic-faq-retriever",
     workflow: [
       "Embed FAQ text corpus",
       "Match user query by similarity ranking",
@@ -41,6 +44,7 @@ const projects = [
     tags: ["FastAPI", "CSV", "Productivity"],
     site: "https://afzu01.github.io/Student-Deadline-Guardian/",
     repo: "https://github.com/Afzu01/Student-Deadline-Guardian",
+    backend: "backend.html#student-deadline-guardian",
     workflow: [
       "Capture deadline and impact",
       "Calculate urgency and sort priorities",
@@ -53,6 +57,7 @@ const projects = [
     tags: ["Leads", "Automation", "CRM"],
     site: "https://afzu01.github.io/LocalBiz-LeadFlow-Assistant/",
     repo: "https://github.com/Afzu01/LocalBiz-LeadFlow-Assistant",
+    backend: "backend.html#localbiz-leadflow-assistant",
     workflow: [
       "Ingest lead from webhook source",
       "Classify intent and assign lead score",
@@ -65,6 +70,7 @@ const projects = [
     tags: ["FAQ", "Semantic", "Student Support"],
     site: "https://afzu01.github.io/Campus-Helpdesk-Search/",
     repo: "https://github.com/Afzu01/Campus-Helpdesk-Search",
+    backend: "backend.html#campus-helpdesk-search",
     workflow: [
       "Index helpdesk FAQs",
       "Search by semantic query matching",
@@ -89,8 +95,8 @@ projects.forEach((project, i) => {
     <p>${project.summary}</p>
     <ul class="workflow-list">${workflow}</ul>
     <div class="card-links">
-      <a target="_blank" rel="noopener noreferrer" href="${project.site}">Website</a>
-      <a target="_blank" rel="noopener noreferrer" href="${project.repo}#readme">README</a>
+      <a target="_blank" rel="noopener noreferrer" href="${project.site}">Open Experience</a>
+      <a href="${project.backend}">Backend / API</a>
     </div>
   `;
 

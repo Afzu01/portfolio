@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backend and API Details</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .backend-wrap { margin: 2rem auto 3rem; }
+    .backend-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 1rem; margin-bottom: 0.9rem; }
+    .backend-card h3 { margin: 0 0 0.4rem; }
+    .backend-card p, .backend-card li { color: #cfe0ec; }
+    .backend-card ul { margin: 0.4rem 0 0; padding-left: 1rem; }
+    .backend-links { margin-top: 0.6rem; display: flex; gap: 0.7rem; flex-wrap: wrap; }
+    .backend-links a { color: #f4f8fb; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.5); }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+  <main class="container backend-wrap">
+    <p class="kicker">Technical Layer</p>
+    <h1>Backend and API Details</h1>
+    <p class="subtitle">This page keeps implementation details separate so the portfolio experience stays user-centric.</p>
+
+    <section id="ai-backened-internship-project" class="backend-card">
+      <h3>AI Backened Internship Project</h3>
+      <p>FastAPI service for recommendations, embeddings, and event webhook processing.</p>
+      <ul>
+        <li>Endpoints: recommend, embed, webhooks/events</li>
+        <li>Pattern: request -> ranking -> automation hook</li>
+      </ul>
+      <div class="backend-links">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Afzu01/AI-Backened-Internship-Project">Repository</a>
+      </div>
+    </section>
+
+    <section id="workflow-orchestrator-api" class="backend-card">
+      <h3>Workflow Orchestrator API</h3>
+      <p>Lifecycle event API with operational summaries and state transitions.</p>
+      <ul>
+        <li>Endpoints: create event, list events, update status, summary</li>
+        <li>Data: SQLite persistence</li>
+      </ul>
+      <div class="backend-links">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Afzu01/Workflow-Orchestrator-API">Repository</a>
+      </div>
+    </section>
+
+    <section id="semantic-faq-retriever" class="backend-card">
+      <h3>Semantic FAQ Retriever</h3>
+      <p>Semantic search backend using vectorized FAQ matching.</p>
+      <ul>
+        <li>Endpoints: search, embed</li>
+        <li>Stack: scikit-learn TF-IDF and cosine similarity</li>
+      </ul>
+      <div class="backend-links">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Afzu01/Semantic-FAQ-Retriever">Repository</a>
+      </div>
+    </section>
+
+    <section id="student-deadline-guardian" class="backend-card">
+      <h3>Student Deadline Guardian</h3>
+      <p>Planning backend for student deadline prioritization and digest generation.</p>
+      <ul>
+        <li>Endpoints: deadlines list, summary, digest</li>
+        <li>Data: CSV-driven planner model</li>
+      </ul>
+      <div class="backend-links">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Afzu01/Student-Deadline-Guardian">Repository</a>
+      </div>
+    </section>
+
+    <section id="localbiz-leadflow-assistant" class="backend-card">
+      <h3>LocalBiz LeadFlow Assistant</h3>
+      <p>Lead ingestion API with intent classification and scoring pipeline.</p>
+      <ul>
+        <li>Endpoints: webhooks/lead, lead updates, summary</li>
+        <li>Pattern: ingest -> classify -> qualify -> close</li>
+      </ul>
+      <div class="backend-links">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Afzu01/LocalBiz-LeadFlow-Assistant">Repository</a>
+      </div>
+    </section>
+
+    <section id="campus-helpdesk-search" class="backend-card">
+      <h3>Campus Helpdesk Search</h3>
+      <p>Support retrieval backend for campus FAQ problem solving.</p>
+      <ul>
+        <li>Endpoints: search, embed</li>
+        <li>Pattern: query -> semantic rank -> confidence filter</li>
+      </ul>
+      <div class="backend-links">
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Afzu01/Campus-Helpdesk-Search">Repository</a>
+      </div>
+    </section>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="index.html">Back to Portfolio</a>
+    </div>
+  </main>
+</body>
+</html>
