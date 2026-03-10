@@ -189,6 +189,18 @@ h1 {
   min-height: 72px;
 }
 
+.workflow-list {
+  margin: 0.7rem 0 0;
+  padding-left: 1rem;
+  color: #d7e5f1;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.workflow-list li {
+  margin: 0.2rem 0;
+}
+
 .card-links {
   display: flex;
   gap: 0.6rem;
