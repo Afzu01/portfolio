@@ -3,100 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Backend and API Details</title>
+  <meta name="theme-color" content="#11110f" />
+  <title>Technical Notes — Afzal Hussain</title>
+  <meta name="description" content="Implementation notes and repository links for selected projects by Afzal Hussain." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .backend-wrap { margin: 2rem auto 3rem; }
-    .backend-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18); border-radius: 16px; padding: 1rem; margin-bottom: 0.9rem; }
-    .backend-card h3 { margin: 0 0 0.4rem; }
-    .backend-card p, .backend-card li { color: #cfe0ec; }
-    .backend-card ul { margin: 0.4rem 0 0; padding-left: 1rem; }
-    .backend-links { margin-top: 0.6rem; display: flex; gap: 0.7rem; flex-wrap: wrap; }
-    .backend-links a { color: #f4f8fb; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.5); }
+    .technical-page { padding-top: 78px; padding-bottom: 100px; }
+    .technical-page h1 { font-size: clamp(3rem, 7vw, 5.5rem); letter-spacing: -.07em; line-height: 1; font-weight: 500; margin: 0 0 22px; }
+    .technical-intro { color: #aaa69e; max-width: 620px; line-height: 1.85; margin-bottom: 55px; }
+    .technical-card { display: grid; grid-template-columns: 70px 1fr; gap: 25px; padding: 27px 0; border-top: 1px solid var(--line); }
+    .technical-number { color: var(--violet); font: .7rem var(--mono); padding-top: 5px; }
+    .technical-card h2 { font-size: 1.25rem; letter-spacing: -.03em; margin: 0 0 8px; }
+    .technical-card p { color: #aaa69e; font-size: .88rem; line-height: 1.8; margin: 0 0 12px; }
+    .technical-card ul { color: #cbc6bd; padding-left: 18px; font-size: .8rem; line-height: 1.9; margin: 0 0 13px; }
+    .technical-card a { color: var(--violet-bright); text-decoration: none; font-size: .78rem; border-bottom: 1px solid rgba(210,185,244,.4); padding-bottom: 3px; }
+    .technical-back { margin-top: 45px; }
+    @media(max-width:600px) { .technical-card { grid-template-columns: 38px 1fr; gap: 12px; } .technical-page { padding-top: 55px; } }
   </style>
 </head>
 <body>
-  <div class="grain"></div>
-  <main class="container backend-wrap">
-    <p class="kicker">Technical Layer</p>
-    <h1>Backend and API Details</h1>
-    <p class="subtitle">This page keeps implementation details separate so the portfolio experience stays user-centric.</p>
+  <header class="site-header wrap">
+    <a class="wordmark" href="index.html">AH<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="index.html#work">Selected work</a>
+      <a class="nav-cta" href="https://github.com/Afzu01" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </nav>
+  </header>
+  <main class="wrap technical-page">
+    <p class="eyebrow">PORTFOLIO / TECHNICAL LAYER</p>
+    <h1>Under the <em>surface.</em></h1>
+    <p class="technical-intro">A closer look at the implementation patterns, tools and repository behind each selected project. For full setup instructions and current code, follow the source links.</p>
 
-    <section id="ai-backened-internship-project" class="backend-card">
-      <h3>AI Backened Internship Project</h3>
-      <p>FastAPI service for recommendations, embeddings, and event webhook processing.</p>
-      <ul>
-        <li>Endpoints: recommend, embed, webhooks/events</li>
-        <li>Pattern: request -> ranking -> automation hook</li>
-      </ul>
-      <div class="backend-links">
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Afzu01/AI-Backened-Internship-Project">Repository</a>
-      </div>
+    <section id="ai-backened-internship-project" class="technical-card">
+      <span class="technical-number">01 / 06</span><div><h2>AI Backend Internship Project</h2><p>FastAPI service combining recommendation logic, text embeddings and event webhook processing.</p><ul><li>Core flows: recommendations, embedding generation and webhook ingestion</li><li>Stack: FastAPI, pandas, NumPy and scikit-learn</li></ul><a href="https://github.com/Afzu01/AI-Backened-Internship-Project" target="_blank" rel="noopener noreferrer">Explore repository ↗</a></div>
     </section>
-
-    <section id="workflow-orchestrator-api" class="backend-card">
-      <h3>Workflow Orchestrator API</h3>
-      <p>Lifecycle event API with operational summaries and state transitions.</p>
-      <ul>
-        <li>Endpoints: create event, list events, update status, summary</li>
-        <li>Data: SQLite persistence</li>
-      </ul>
-      <div class="backend-links">
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Afzu01/Workflow-Orchestrator-API">Repository</a>
-      </div>
+    <section id="workflow-orchestrator-api" class="technical-card">
+      <span class="technical-number">02 / 06</span><div><h2>Workflow Orchestrator API</h2><p>Event lifecycle API with status transitions and operational summaries.</p><ul><li>Core flows: event creation, status updates and summary retrieval</li><li>Persistence: SQLite</li></ul><a href="https://github.com/Afzu01/Workflow-Orchestrator-API" target="_blank" rel="noopener noreferrer">Explore repository ↗</a></div>
     </section>
-
-    <section id="semantic-faq-retriever" class="backend-card">
-      <h3>Semantic FAQ Retriever</h3>
-      <p>Semantic search backend using vectorized FAQ matching.</p>
-      <ul>
-        <li>Endpoints: search, embed</li>
-        <li>Stack: scikit-learn TF-IDF and cosine similarity</li>
-      </ul>
-      <div class="backend-links">
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Afzu01/Semantic-FAQ-Retriever">Repository</a>
-      </div>
+    <section id="semantic-faq-retriever" class="technical-card">
+      <span class="technical-number">03 / 06</span><div><h2>Semantic FAQ Retriever</h2><p>FAQ retrieval service using vectorized text matching and similarity ranking.</p><ul><li>Method: TF-IDF vectorization and cosine similarity</li><li>API: search and embedding preview</li></ul><a href="https://github.com/Afzu01/Semantic-FAQ-Retriever" target="_blank" rel="noopener noreferrer">Explore repository ↗</a></div>
     </section>
-
-    <section id="student-deadline-guardian" class="backend-card">
-      <h3>Student Deadline Guardian</h3>
-      <p>Planning backend for student deadline prioritization and digest generation.</p>
-      <ul>
-        <li>Endpoints: deadlines list, summary, digest</li>
-        <li>Data: CSV-driven planner model</li>
-      </ul>
-      <div class="backend-links">
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Afzu01/Student-Deadline-Guardian">Repository</a>
-      </div>
+    <section id="student-deadline-guardian" class="technical-card">
+      <span class="technical-number">04 / 06</span><div><h2>Student Deadline Guardian</h2><p>Deadline planning backend with priority scoring and digest generation.</p><ul><li>Core flows: deadline listing, priority calculation and weekly digest</li><li>Data source: CSV-driven records</li></ul><a href="https://github.com/Afzu01/Student-Deadline-Guardian" target="_blank" rel="noopener noreferrer">Explore repository ↗</a></div>
     </section>
-
-    <section id="localbiz-leadflow-assistant" class="backend-card">
-      <h3>LocalBiz LeadFlow Assistant</h3>
-      <p>Lead ingestion API with intent classification and scoring pipeline.</p>
-      <ul>
-        <li>Endpoints: webhooks/lead, lead updates, summary</li>
-        <li>Pattern: ingest -> classify -> qualify -> close</li>
-      </ul>
-      <div class="backend-links">
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Afzu01/LocalBiz-LeadFlow-Assistant">Repository</a>
-      </div>
+    <section id="localbiz-leadflow-assistant" class="technical-card">
+      <span class="technical-number">05 / 06</span><div><h2>LocalBiz LeadFlow Assistant</h2><p>Lead intake API with intent detection, lead scoring and follow-up tracking.</p><ul><li>Core flow: webhook ingestion → classification → qualification → follow-up</li><li>Persistence: SQLite</li></ul><a href="https://github.com/Afzu01/LocalBiz-LeadFlow-Assistant" target="_blank" rel="noopener noreferrer">Explore repository ↗</a></div>
     </section>
-
-    <section id="campus-helpdesk-search" class="backend-card">
-      <h3>Campus Helpdesk Search</h3>
-      <p>Support retrieval backend for campus FAQ problem solving.</p>
-      <ul>
-        <li>Endpoints: search, embed</li>
-        <li>Pattern: query -> semantic rank -> confidence filter</li>
-      </ul>
-      <div class="backend-links">
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/Afzu01/Campus-Helpdesk-Search">Repository</a>
-      </div>
+    <section id="campus-helpdesk-search" class="technical-card">
+      <span class="technical-number">06 / 06</span><div><h2>Campus Helpdesk Search</h2><p>Campus support retrieval interface with ranked semantic matches and confidence filtering.</p><ul><li>Method: TF-IDF and cosine similarity</li><li>API: semantic search and embedding preview</li></ul><a href="https://github.com/Afzu01/Campus-Helpdesk-Search" target="_blank" rel="noopener noreferrer">Explore repository ↗</a></div>
     </section>
-
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="index.html">Back to Portfolio</a>
-    </div>
+    <div class="technical-back"><a class="button button-light" href="index.html">← Back to portfolio</a></div>
   </main>
+  <footer class="site-footer wrap"><a class="wordmark" href="index.html">AH<span>.</span></a><p>Designed & built by Afzal Hussain</p><a href="#">Back to top ↑</a></footer>
 </body>
 </html>
