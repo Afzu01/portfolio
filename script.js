@@ -1,119 +1,103 @@
 const projects = [
   {
-    name: "AI Backened Internship Project",
-    summary: "Recommendation, embeddings, and webhook-powered backend with an interactive demo UI.",
+    name: "AI Backend Internship Project",
+    category: "AI & Search",
+    summary: "A FastAPI service bringing together recommendation logic, text embeddings and webhook-based event handling.",
     tags: ["FastAPI", "Recommendations", "Embeddings"],
     site: "https://afzu01.github.io/AI-Backened-Internship-Project/ai-project/",
     repo: "https://github.com/Afzu01/AI-Backened-Internship-Project",
-    backend: "backend.html#ai-backened-internship-project",
-    workflow: [
-      "Input product context and user constraints",
-      "Generate recommendation candidates and embeddings",
-      "Trigger automation through webhook events"
-    ]
+    backend: "backend.html#ai-backened-internship-project"
   },
   {
     name: "Workflow Orchestrator API",
-    summary: "Operational event lifecycle API with status tracking and dashboard-style frontend.",
+    category: "Backend",
+    summary: "An event-driven workflow API for creating events, tracking lifecycle states and viewing operational summaries.",
     tags: ["FastAPI", "SQLite", "Workflow"],
     site: "https://afzu01.github.io/Workflow-Orchestrator-API/",
     repo: "https://github.com/Afzu01/Workflow-Orchestrator-API",
-    backend: "backend.html#workflow-orchestrator-api",
-    workflow: [
-      "Create event with owner and priority",
-      "Move through status lifecycle states",
-      "Track summaries on dashboard"
-    ]
+    backend: "backend.html#workflow-orchestrator-api"
   },
   {
     name: "Semantic FAQ Retriever",
-    summary: "Semantic search over FAQ data using vectorized text retrieval and scoring.",
+    category: "AI & Search",
+    summary: "A lightweight semantic retrieval system that ranks FAQ answers using TF-IDF vectorization and cosine similarity.",
     tags: ["NLP", "scikit-learn", "Search"],
     site: "https://afzu01.github.io/Semantic-FAQ-Retriever/",
     repo: "https://github.com/Afzu01/Semantic-FAQ-Retriever",
-    backend: "backend.html#semantic-faq-retriever",
-    workflow: [
-      "Embed FAQ text corpus",
-      "Match user query by similarity ranking",
-      "Return top answers with confidence"
-    ]
+    backend: "backend.html#semantic-faq-retriever"
   },
   {
     name: "Student Deadline Guardian",
-    summary: "Deadline planning app with priority logic, digest generation, and clean planning UI.",
+    category: "Automation",
+    summary: "A student planning tool that scores deadlines by urgency and produces a structured weekly digest.",
     tags: ["FastAPI", "CSV", "Productivity"],
     site: "https://afzu01.github.io/Student-Deadline-Guardian/",
     repo: "https://github.com/Afzu01/Student-Deadline-Guardian",
-    backend: "backend.html#student-deadline-guardian",
-    workflow: [
-      "Capture deadline and impact",
-      "Calculate urgency and sort priorities",
-      "Generate weekly digest checklist"
-    ]
+    backend: "backend.html#student-deadline-guardian"
   },
   {
     name: "LocalBiz LeadFlow Assistant",
-    summary: "Webhook lead intake, auto intent detection, and follow-up pipeline management.",
-    tags: ["Leads", "Automation", "CRM"],
+    category: "Automation",
+    summary: "A lead intake workflow that receives webhook events, detects intent, assigns scores and tracks follow-up stages.",
+    tags: ["FastAPI", "Automation", "SQLite"],
     site: "https://afzu01.github.io/LocalBiz-LeadFlow-Assistant/",
     repo: "https://github.com/Afzu01/LocalBiz-LeadFlow-Assistant",
-    backend: "backend.html#localbiz-leadflow-assistant",
-    workflow: [
-      "Ingest lead from webhook source",
-      "Classify intent and assign lead score",
-      "Update follow-up stage to close"
-    ]
+    backend: "backend.html#localbiz-leadflow-assistant"
   },
   {
     name: "Campus Helpdesk Search",
-    summary: "Campus support search layer with ranked semantic results and confidence filtering.",
-    tags: ["FAQ", "Semantic", "Student Support"],
+    category: "AI & Search",
+    summary: "A campus FAQ search interface with ranked semantic matches and confidence-based result filtering.",
+    tags: ["FAQ", "Semantic Search", "FastAPI"],
     site: "https://afzu01.github.io/Campus-Helpdesk-Search/",
     repo: "https://github.com/Afzu01/Campus-Helpdesk-Search",
-    backend: "backend.html#campus-helpdesk-search",
-    workflow: [
-      "Index helpdesk FAQs",
-      "Search by semantic query matching",
-      "Return ranked guidance by department"
-    ]
+    backend: "backend.html#campus-helpdesk-search"
   }
 ];
 
 const grid = document.getElementById("projectGrid");
+const count = document.getElementById("projectCount");
+const filters = document.querySelectorAll(".filter");
 
-projects.forEach((project, i) => {
-  const card = document.createElement("article");
-  card.className = "card";
-  card.style.animation = `fadeInUp 550ms ease ${i * 90}ms both`;
+function renderProjects(category = "All") {
+  const visible = category === "All" ? projects : projects.filter(project => project.category === category);
+  count.textContent = String(visible.length).padStart(2, "0");
+  grid.innerHTML = "";
 
-  const badges = project.tags.map((tag) => `<span class="badge">${tag}</span>`).join("");
-  const workflow = project.workflow.map((step, idx) => `<li>${idx + 1}. ${step}</li>`).join("");
+  if (!visible.length) {
+    grid.innerHTML = '<p class="empty-state">No projects in this category yet.</p>';
+    return;
+  }
 
-  card.innerHTML = `
-    <h3>${project.name}</h3>
-    <div class="badges">${badges}</div>
-    <p>${project.summary}</p>
-    <ul class="workflow-list">${workflow}</ul>
-    <div class="card-links">
-      <a target="_blank" rel="noopener noreferrer" href="${project.site}">Open Experience</a>
-      <a href="${project.backend}">Backend / API</a>
-    </div>
-  `;
+  visible.forEach((project, index) => {
+    const card = document.createElement("article");
+    card.className = "project-card";
+    card.style.animationDelay = `${index * 65}ms`;
+    const tags = project.tags.map(tag => `<span class="tag">${tag}</span>`).join("");
+    card.innerHTML = `
+      <div class="card-topline"><span>PROJECT / ${String(projects.indexOf(project) + 1).padStart(2, "0")}</span><span class="card-symbol">✳</span></div>
+      <h3>${project.name}</h3>
+      <p>${project.summary}</p>
+      <div class="tag-list">${tags}</div>
+      <div class="card-links">
+        <a href="${project.site}" target="_blank" rel="noopener noreferrer">Project page ↗</a>
+        <a href="${project.repo}" target="_blank" rel="noopener noreferrer">Source code ↗</a>
+        <a href="${project.backend}">Technical notes ↗</a>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
 
-  grid.appendChild(card);
+filters.forEach(button => {
+  button.addEventListener("click", () => {
+    filters.forEach(item => {
+      const active = item === button;
+      item.classList.toggle("active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+    renderProjects(button.dataset.filter);
+  });
 });
 
-const style = document.createElement("style");
-style.textContent = `
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-`;
-document.head.appendChild(style);
+renderProjects();
