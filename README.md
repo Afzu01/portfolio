@@ -1,4 +1,4 @@
-# Afzal Hussain — Portfolio
+# Afzal Hussain — Portfoli
 
 > Curious by nature. Engineering by choice.
 
